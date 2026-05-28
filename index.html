@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Хавелов Продукт</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #1a3a2a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    #preloader {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 1;
+      transition: opacity 0.8s ease;
+    }
+
+    #preloader.hidden { opacity: 0; }
+
+    .pre-leaf {
+      width: 60px;
+      height: 60px;
+      border: 3px solid transparent;
+      border-top-color: #52b788;
+      border-radius: 50%;
+      animation: pre-spin 1s linear infinite;
+    }
+
+    .pre-text {
+      color: #b7e4c7;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      margin-top: 20px;
+      letter-spacing: 3px;
+      animation: pre-pulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pre-spin { to { transform: rotate(360deg); } }
+    @keyframes pre-pulse { 0%,100%{opacity:0.4} 50%{opacity:1} }
+  </style>
+</head>
+<body>
+  <div id="preloader">
+    <div class="pre-leaf"></div>
+    <div class="pre-text">🌳 Хавелов Продукт</div>
+  </div>
+
+  <script>
+    setTimeout(function() {
+      document.getElementById('preloader').classList.add('hidden');
+      setTimeout(function() {
+        window.location.replace('https://havelov.online');
+      }, 800);
+    }, 1200);
+  </script>
+</body>
+</html>
